@@ -37,12 +37,10 @@ public class RegisterController implements Initializable{
 
     public void apacheBrowse(ActionEvent event) {
         apacheLogPath.setText("");
-        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        Stage stage = (Stage)((Button) event.getSource()).getScene().getWindow();
 		FileChooser filechooser = new FileChooser();
 		filechooser.setTitle("Select the log source");
-
-        File resourceDir = new File("src/main/resources/project1/MainApp/LogSamples");
-		filechooser.setInitialDirectory(resourceDir);
+		filechooser.setInitialDirectory(new File(System.getProperty("user.home")));
         java.io.File selectedFile = filechooser.showOpenDialog(stage);
 
         if (selectedFile != null) {
@@ -52,12 +50,10 @@ public class RegisterController implements Initializable{
 
     public void modsecBrowse(ActionEvent event) {
         modsecLogPath.setText("");
-        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        Stage stage = (Stage)((Button) event.getSource()).getScene().getWindow();
 		FileChooser filechooser = new FileChooser();
 		filechooser.setTitle("Select the log source");
-
-        File resourceDir = new File("src/main/resources/project1/MainApp/LogSamples");
-		filechooser.setInitialDirectory(resourceDir);
+		filechooser.setInitialDirectory(new File(System.getProperty("user.home")));
         java.io.File selectedFile = filechooser.showOpenDialog(stage);
 
         if (selectedFile != null) {
